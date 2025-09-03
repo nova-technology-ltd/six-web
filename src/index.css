@@ -1,0 +1,7 @@
+@import "tailwindcss";
+* {
+  font-family: Quicksand, calibri, "sans serif";
+}
+.backdrop {
+  background: #000000b6;
+}
