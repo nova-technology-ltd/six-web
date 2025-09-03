@@ -1,15 +1,23 @@
-import { ArrowRight, Currency, Smartphone, Users } from "lucide-react";
+import {
+  ArrowRight,
+  Currency,
+  Heading2,
+  Smartphone,
+  Users,
+} from "lucide-react";
+import { useNavigate } from "react-router-dom";
 import Button from "./Button";
-const Card = ({ text, array, heading, img }) => {
+export const FeatureCard = ({ text, array, heading, img, subHeading }) => {
   return (
-    <div className="shadow-sm rounded-lg flex flex-col items-center gap-4 p-6 transition-all hover:mb-10 hover:shadow-lg">
+    <div className="shadow-sm rounded-lg flex flex-col items-center gap-3 p-6 transition-all hover:shadow-lg">
       <span className="bg-purple-300 p-3 w-max rounded-md">{img}</span>
-      <h1>{heading}</h1>
+      <h1 className="font-bold">{heading}</h1>
       <p className="text-center text-sm">{text}</p>
+      {subHeading && <h2 className="font-bold self-start">Features</h2>}
       <ul className="self-start text-sm list-disc flex flex-col gap-2">
         {array &&
           array.map((item) => {
-            return <li>{item}</li>;
+            return <li className="text-purple-900">{item}</li>;
           })}
       </ul>
       <Button
@@ -23,6 +31,7 @@ const Card = ({ text, array, heading, img }) => {
   );
 };
 function OurCore() {
+  const navigate = useNavigate();
   return (
     <section className="flex flex-col gap-6 px-4 justify-center items-center mt-4 h-max py-10">
       <h1 className="text-4xl font-bold">Our Core Services</h1>
@@ -32,7 +41,7 @@ function OurCore() {
         and communities.
       </p>
       <div className="grid sm:grid-cols-3 grid-cols-1 justify-between h-max w-full p-10 sm:px-20 px-4 gap-10">
-        <Card
+        <FeatureCard
           heading={"Social Engagement Platforms"}
           array={[
             "Community Building",
@@ -42,7 +51,7 @@ function OurCore() {
           ]}
           img={<Users className="text-purple-800" />}
         />
-        <Card
+        <FeatureCard
           heading={"Seamless Bill Payments"}
           array={[
             "One-click Payments",
@@ -52,7 +61,7 @@ function OurCore() {
           ]}
           img={<Currency className="text-purple-800" />}
         />{" "}
-        <Card
+        <FeatureCard
           heading={"Innovative Digital Solutions"}
           array={[
             "Mobile-first Design",
@@ -67,6 +76,9 @@ function OurCore() {
         text={"Explore All Services"}
         styles={"bg-purple-900 text-white py-3 px-10 gap-3"}
         iright={<ArrowRight className="w-4" />}
+        onClick={() => {
+          navigate("/services");
+        }}
       />
     </section>
   );

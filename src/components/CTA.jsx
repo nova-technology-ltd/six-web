@@ -1,4 +1,5 @@
 import {
+  ArrowLeft,
   ArrowRight,
   Download,
   DownloadCloud,
@@ -11,6 +12,7 @@ import {
 import Button from "./Button";
 import { useState } from "react";
 const DownloadSection = ({ onClick }) => {
+  const [page, setPage] = useState("general");
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center text-xs">
       <div
@@ -27,46 +29,94 @@ const DownloadSection = ({ onClick }) => {
           <h1 className="font-semibold">Download Six6 App</h1>
         </div>
         <p className="text-xs">
-          Choose your platform to download the SIX6 mobile or desktop
-          application
+          Choose your platform to download the SIX6
+          <br /> mobile or desktop application
         </p>
-        <div className="flex items-center border-[1px] border-purple-200 p-3 justify-between rounded-md">
-          <span className="bg-purple-200 sm:p-3 p-1 text-xs rounded-md">
-            <Smartphone className="text-purple-600" />
-          </span>
-          <h1>
-            Android <br /> Download for Android devices
-          </h1>
-          <span className="p-1 text-xs rounded-full font-bold px-3 bg-black text-white">
-            Available
-          </span>
-          <Download />
-        </div>
-        <div className="flex items-center border-[1px] border-purple-200 p-3 justify-between rounded-md">
-          <span className="bg-purple-200 p-3 rounded-md">
-            <Smartphone className="text-purple-600" />
-          </span>
-          <h1>
-            iOS <br />
-            Download for iPhone and iPad
-          </h1>
-          <span className="p-1 text-xs rounded-full font-bold px-3 bg-black text-white">
-            Available
-          </span>
-          <Download />
-        </div>
-        <div className="flex items-center border-[1px] border-purple-200 p-3 justify-between rounded-md gap-4">
-          <span className="bg-purple-200 p-3 rounded-md">
-            <Laptop className="text-purple-600" />
-          </span>
-          <h1>
-            Desktop <br /> Available for Windows, macOS, and Linux
-          </h1>
-          <span className="p-1 text-xs rounded-full font-bold px-3 bg-gray-300">
-            Beta
-          </span>
-          <ExternalLink />
-        </div>
+        {page == "general" && (
+          <>
+            <div className="flex items-center border-[1px] border-purple-200 p-3 justify-between rounded-md cursor-pointer hover:border-purple-300">
+              <span className="bg-purple-200 sm:p-3 p-1 text-xs rounded-md">
+                <Smartphone className="text-purple-600 w-4" />
+              </span>
+              <h1>
+                Android <br /> Download for Android devices
+              </h1>
+              <span className="p-1 text-[10px] rounded-full font-bold px-3 bg-black text-white">
+                Available
+              </span>
+              <Download className="w-4" />
+            </div>
+            <div className="flex items-center border-[1px] border-purple-200 p-3 justify-between rounded-md cursor-pointer hover:border-purple-300">
+              <span className="bg-purple-200 p-3 rounded-md">
+                <Smartphone className="text-purple-600  w-4" />
+              </span>
+              <h1>
+                iOS <br />
+                Download for iPhone and iPad
+              </h1>
+              <span className="p-1 text-[10px] rounded-full font-bold px-3 bg-black text-white">
+                Available
+              </span>
+              <Download className="w-4" />
+            </div>
+            <div
+              className="flex items-center border-[1px] border-purple-200 p-3 justify-between rounded-md gap-4 cursor-pointer hover:border-purple-300"
+              onClick={() => {
+                setPage("pcPage");
+              }}
+            >
+              <span className="bg-purple-200 p-3 rounded-md">
+                <Laptop className="text-purple-600  w-4" />
+              </span>
+              <h1>
+                Desktop <br /> Available for Windows, macOS, and Linux
+              </h1>
+              <span className="p-1 text-[10px] rounded-full font-bold px-3 bg-gray-300">
+                Beta
+              </span>
+              <ExternalLink className="w-4" />
+            </div>
+          </>
+        )}
+        {/* pc download page */}
+        {page == "pcPage" && (
+          <>
+            <button
+              className="flex items-center gap-3 hover:bg-purple-800 text-xs hover:text-white px-2 rounded-full"
+              onClick={() => {
+                setPage("general");
+              }}
+            >
+              <ArrowLeft className="w-4" />
+              Back to dowload section
+            </button>
+            <h1 className="font-bold">Choose your operating system:</h1>
+            <div className="flex items-center border-[1px] border-purple-200 p-3 justify-between rounded-md cursor-pointer hover:border-purple-300">
+              <h1>
+                iOS <br />
+                Download for iPhone and iPad
+              </h1>
+
+              <Download />
+            </div>
+            <div className="flex items-center border-[1px] border-purple-200 p-3 justify-between rounded-md cursor-pointer hover:border-purple-300">
+              <h1>
+                iOS <br />
+                Download for iPhone and iPad
+              </h1>
+
+              <Download />
+            </div>{" "}
+            <div className="flex items-center border-[1px] border-purple-200 p-3 justify-between rounded-md cursor-pointer hover:border-purple-300">
+              <h1>
+                iOS <br />
+                Download for iPhone and iPad
+              </h1>
+
+              <Download />
+            </div>
+          </>
+        )}
 
         <p className="text-xs text-gray-700 text-center">
           By downloading, you agree to our Terms of Service and Privacy Policy
