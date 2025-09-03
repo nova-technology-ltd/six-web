@@ -22,10 +22,14 @@ const Footer = () => {
         </div>
         <ul className="flex flex-col gap-3  ">
           <li className="text-white mb-2 text-sm">Quick Links</li>
-          <Link className="hover:text-purple-800">Services</Link>
+          <Link className="hover:text-purple-800" to={"/services"}>
+            Services
+          </Link>
           <Link className="hover:text-purple-800">About US</Link>{" "}
           <Link className="hover:text-purple-800">Pricing</Link>{" "}
-          <Link className="hover:text-purple-800">Support</Link>{" "}
+          <Link className="hover:text-purple-800" to={"/support"}>
+            Support
+          </Link>{" "}
           <Link className="hover:text-purple-800">Blog</Link>
         </ul>
         <ul className="flex flex-col gap-3">
