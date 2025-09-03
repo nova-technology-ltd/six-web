@@ -164,7 +164,7 @@ function CTA() {
         styles={"bg-white px-8 py-2 hover:bg-gray-400 text-black text-xs gap-3"}
         ileft={<Mail className="w-4" />}
         onClick={() => {
-          Navigate("/support");
+          navigate("/support");
         }}
       />
 
