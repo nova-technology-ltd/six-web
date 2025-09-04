@@ -1,10 +1,14 @@
 import { ArrowLeft, ArrowRight } from "lucide-react";
-import logo from "../assets/six-logo.png";
+import logo from "../assets/sufcart-logo/sufcart-white-2.png";
 import Button from "./Button";
 const Hero = () => {
   return (
     <section className="flex flex-col items-center justify-center p-10 bg-gray-900 gap-6 w-full min-h-screen">
-      <img src={logo} alt="six logo" className="bg-black sm:w-36 w-28" />
+      <span className="flex items-center">
+        {" "}
+        <img src={logo} alt="six logo" className=" sm:w-16 w-10" />
+      </span>
+
       <div
         className="border-1 border-purple-900  rounded-full px-4 py-2 capitalize text-purple-900 text-nowrap"
         style={{ backgroundColor: "rgba(19, 0, 15, 0.2)" }}
@@ -16,7 +20,7 @@ const Hero = () => {
         <span className="text-purple-800">Simplify</span>
       </h1>
       <p className="sm:w-2/3 text-center sm:text-2xl text-base text-gray-400">
-        SIX6 is your premier digital service provider, revolutionizing how
+        Sufcart is your premier digital service provider, revolutionizing how
         people connect and transact online with seamless social engagement,
         instant bill payments, and innovative solutions.
       </p>
