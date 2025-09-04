@@ -145,6 +145,9 @@ function CTA() {
           text={"Get started free"}
           styles={"bg-purple-800 text-white px-8 py-2 text-xs gap-3"}
           iright={<ArrowRight className="w-4" />}
+          onClick={() => {
+            navigate("/registration");
+          }}
         />
         <Button
           text={"Download App"}

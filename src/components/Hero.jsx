@@ -1,7 +1,9 @@
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import logo from "../assets/sufcart-logo/sufcart-white-2.png";
 import Button from "./Button";
+import { useNavigate } from "react-router-dom";
 const Hero = () => {
+  const navigate = useNavigate();
   return (
     <section className="flex flex-col items-center justify-center p-10 bg-gray-900 gap-6 w-full min-h-screen">
       <span className="flex items-center">
@@ -29,6 +31,9 @@ const Hero = () => {
           text={"Get Started Today"}
           styles={"bg-purple-800 text-white text-xs px-10 py-3 gap-2"}
           iright={<ArrowRight />}
+          onClick={() => {
+            navigate("/registration");
+          }}
         />
         <Button
           text={"Learn More"}
