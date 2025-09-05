@@ -38,6 +38,9 @@ const Hero = () => {
         <Button
           text={"Learn More"}
           styles={"bg-white text-xs hover:text-white hover:bg-black px-6 py-3"}
+          onClick={() => {
+            navigate("/about-us");
+          }}
         />
       </div>
     </section>

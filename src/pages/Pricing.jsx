@@ -1,4 +1,4 @@
 function Pricing() {
-  return <></>;
+  return <>Pricing</>;
 }
 export default Pricing;
