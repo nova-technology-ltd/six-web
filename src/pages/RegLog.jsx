@@ -8,7 +8,7 @@ const RegLog = () => {
   const [current, setCurrent] = useState("login");
   return (
     <>
-      <section className="flex flex-col items-center p-10 bg-black gap-8 min-h-screen">
+      <section className="flex flex-col items-center sm:p-10 p-4 bg-black gap-y-8 min-h-screen">
         <button
           className="flex items-center gap-3 text-white cursor-pointer hover:bg-gray-800 px-6 py-2 rounded-md"
           onClick={() => {
@@ -21,7 +21,7 @@ const RegLog = () => {
         <img src={logo} className="w-4" />
 
         <section
-          className="bg-white w-1/3 p-8 rounded-md flex flex-col gap-3 items-center"
+          className="bg-white sm:w-1/3 w-full p-6 rounded-md flex flex-col gap-3 items-center"
           onSubmit={(e) => {
             e.target.preventDefault();
           }}
@@ -32,7 +32,7 @@ const RegLog = () => {
             <Button
               text={"Sign In"}
               styles={
-                "px-10 w-full py-2 border-1 border-white focus:shadow-sm hover:border-1 hover:border-purple-300 "
+                " w-full py-2 border-1 border-white focus:shadow-sm hover:border-1 hover:border-purple-300 "
               }
               onClick={() => {
                 setCurrent("login");
@@ -41,7 +41,7 @@ const RegLog = () => {
             <Button
               text={"Sign Up"}
               styles={
-                "px-10 w-full py-2 border-1 border-white focus:shadow-sm hover:border-1 hover:border-purple-300"
+                " w-full py-2 border-1 border-white focus:shadow-sm hover:border-1 hover:border-purple-300"
               }
               onClick={() => {
                 setCurrent("signup");
