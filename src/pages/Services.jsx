@@ -11,7 +11,7 @@ import { useNavigate } from "react-router-dom";
 import Button from "../components/Button";
 import { FeatureCard } from "../components/OurCore";
 
-const OurServices = () => {
+const Services = () => {
   const navigate = useNavigate();
   return (
     <>
@@ -145,4 +145,4 @@ const OurServices = () => {
     </>
   );
 };
-export default OurServices;
+export default Services;

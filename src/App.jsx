@@ -1,5 +1,5 @@
 import Landing from "./pages/Landing";
-import OurServices from "./pages/OurServices";
+import Services from "./pages/Services";
 import Support from "./pages/Support";
 import RegLog from "./pages/RegLog";
 import About from "./pages/About";
@@ -10,7 +10,7 @@ const App = () => {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Landing />} />
-        <Route path="/services" element={<OurServices />} />
+        <Route path="/services" element={<Services />} />
         <Route path="/support" element={<Support />} />
         <Route path="/registration" element={<RegLog />} />
         <Route path="/about-us" element={<About />} />{" "}

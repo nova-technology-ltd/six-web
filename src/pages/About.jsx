@@ -46,7 +46,7 @@ const About = () => {
       </section>
       <section className="bg-black flex flex-col items-center gap-4 p-10">
         <img src={logo} alt="sucart logo" className="w-8" />
-        <h1 className="text-6xl font-extrabold text-white">
+        <h1 className="text-6xl font-extrabold text-white text-center">
           About <span className="text-purple-800">Sufcart</span>
         </h1>
         <p className="text-gray-300 text-2xl sm:w-2/3 text-center ">
